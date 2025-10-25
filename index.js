@@ -41,3 +41,11 @@ cells.forEach(function (cell) {
     });
     
 });
+
+const resetBtn = document.querySelector(".reset-btn");
+
+resetBtn.addEventListener("click", function() {
+    cells.forEach(function(cell){
+        cell.style.backgroundColor = "#FFF2EF";
+    });
+});
