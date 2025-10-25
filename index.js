@@ -20,3 +20,24 @@ function drawSquare(dim) {
         squareSection.appendChild(square);
     }
 }
+
+function generateRandomHexColor() {
+    const randomNumber = Math.floor(Math.random() * 16777215);
+
+    // Convert the number to a hex string
+    let hexColor = randomNumber.toString(16);
+    // Pad the string with leading zeros if necessary to ensure 6 digits
+    hexColor = hexColor.padStart(6, '0');
+
+    return `#${hexColor}`;
+}
+
+const cells = document.querySelectorAll(".cell");
+
+cells.forEach(function (cell) {
+    cell.addEventListener("mouseover", function(){
+        const randomColor = generateRandomHexColor();
+        cell.style.backgroundColor = randomColor;
+    });
+    
+});
