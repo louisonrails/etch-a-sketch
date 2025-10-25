@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF2EF;
+    color: #1A2A4F;
+    font-family: "Bitcount Grid Single";
+    padding: 20px;
+}
+
+.header h1 {
+    font-size: 42px;
+}
+
+.square {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #1A2A4F;
+    margin: 16px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons div {
+    padding: 16px;
+    background-color: #FFDBB6;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.buttons div:hover{
+    background-color: #F7A5A5;
+}
