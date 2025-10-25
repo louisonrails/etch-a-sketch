@@ -59,6 +59,3 @@ changeDimBtn.addEventListener("click", function () {
     squareSection.innerHTML = "";
     drawSquare(newDim);
 });
-
-
-
