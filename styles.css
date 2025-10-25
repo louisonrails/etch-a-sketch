@@ -19,10 +19,17 @@ body {
 }
 
 .square {
-    width: 400px;
-    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 600px;
     border: 1px solid #1A2A4F;
     margin: 16px;
+}
+
+.cell {
+    box-sizing: border-box;
+    border: 1px solid #1A2A4F;
 }
 
 .buttons {
