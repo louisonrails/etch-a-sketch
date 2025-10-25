@@ -1,11 +1,15 @@
 const SQUARE_SECTION_SIZE = 600;
 const squareSection = document.getElementById("squareSection");
+const resetBtn = document.querySelector(".reset-btn");
+const changeDimBtn = document.querySelector(".change-dim-btn");
 
 if (!squareSection.children.length) {
     drawSquare(16);
 }
 
 function drawSquare(dim) {
+
+    console.log("I was called.")
 
     let squareSize = SQUARE_SECTION_SIZE / dim;
     let numberOfSquares = dim * dim;
@@ -19,6 +23,24 @@ function drawSquare(dim) {
 
         squareSection.appendChild(square);
     }
+
+    const cells = document.querySelectorAll(".cell");
+
+    cells.forEach(function (cell) {
+        cell.addEventListener("mouseover", function () {
+            console.log("I got hovered!");
+            const randomColor = generateRandomHexColor();
+            cell.style.backgroundColor = randomColor;
+        });
+
+    });
+
+    resetBtn.addEventListener("click", function () {
+        cells.forEach(function (cell) {
+            cell.style.backgroundColor = "#FFF2EF";
+        });
+    });
+
 }
 
 function generateRandomHexColor() {
@@ -32,20 +54,11 @@ function generateRandomHexColor() {
     return `#${hexColor}`;
 }
 
-const cells = document.querySelectorAll(".cell");
-
-cells.forEach(function (cell) {
-    cell.addEventListener("mouseover", function(){
-        const randomColor = generateRandomHexColor();
-        cell.style.backgroundColor = randomColor;
-    });
-    
+changeDimBtn.addEventListener("click", function () {
+    let newDim = prompt("Enter new dimenssion(16, 24, etc).");
+    squareSection.innerHTML = "";
+    drawSquare(newDim);
 });
 
-const resetBtn = document.querySelector(".reset-btn");
 
-resetBtn.addEventListener("click", function() {
-    cells.forEach(function(cell){
-        cell.style.backgroundColor = "#FFF2EF";
-    });
-});
+
